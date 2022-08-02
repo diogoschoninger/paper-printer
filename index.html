@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gerador de promoções</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    @media print {
+      h1, h2, #productsData, input { visibility: hidden }
+      #printable {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerador de promoções</h1>
+
+  <h2>Informe os dados dos produtos</h2>
+
+  <div id="productsData">
+    <div id="productBlock1">
+      <input type="text" placeholder="Descrição do produto" id="productDescription1"/>
+      <input type="text" placeholder="Preço" id="productPrice1"/>
+    </div>
+  </div>
+  
+  <input type="button" value="Adicionar produto" id="btnAdd"/>
+  <input type="button" value="Imprimir" id="btnPrint"/>
+  
+  <div id="printable"></div>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
