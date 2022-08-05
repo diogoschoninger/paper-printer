@@ -13,8 +13,23 @@
       padding: 0;
       box-sizing: border-box;
     }
+    body {
+      font-family: Arial, sans-serif;
+      padding: .5rem;
+    }
+    h1, h2, .inputGroup {
+      margin-bottom: .5rem;
+    }
+    input {
+      padding: .5rem;
+      border: 1px solid #555;
+      border-radius: .5rem;
+    }
+    input[type=button] {
+      cursor: pointer;
+    }
     @media print {
-      h1, h2, #productsData, input { visibility: hidden }
+      body { visibility: hidden }
       #printable {
         visibility: visible;
         position: absolute;
@@ -29,7 +44,7 @@
   <h2>Informe os dados dos produtos</h2>
 
   <div id="productsData">
-    <div id="productBlock1">
+    <div id="productBlock1" class="inputGroup">
       <input type="text" placeholder="Descrição do produto" id="productDescription1"/>
       <input type="text" placeholder="Preço" id="productPrice1"/>
     </div>
