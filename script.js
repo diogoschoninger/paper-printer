@@ -27,8 +27,9 @@ btnPrint.onclick = () => {
 
     printable.insertAdjacentHTML('beforeend', `
       <div style="height: 30.639cm; width: 21cm; display: block">
-        <div style="margin: 0; width: 100%; display: flex; align-items: center; text-align: center; height: 50%; font-size: 2.5cm; font-weight: bold; font-family: Arial, sans-serif">${description}</div>
-        <div style="margin: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 50%; font-size: 5cm; font-weight: bold; font-family: Arial, sans-serif">${price}</div>
+        <div style="margin: 0; width: 100%; height: 10%; font-size: 2cm; font-weight: bold; color: #eee;">OFERTA</div>
+        <div style="margin: 0; width: 100%; display: flex; align-items: center; text-align: center; height: 40%; font-size: 2.5cm; font-weight: bold; font-family: Arial, sans-serif">${description}</div>
+        <div style="margin: 0; margin-bottom: 3cm; width: 100%; display: flex; align-items: center; justify-content: center; height: 40%; font-size: 5cm; font-weight: bold; font-family: Arial, sans-serif">${price}</div>
       </div>
     `);
   }
