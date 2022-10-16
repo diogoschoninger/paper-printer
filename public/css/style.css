@@ -74,10 +74,11 @@ header ul a:hover {
   gap: var(--space-1)
 }
 
-input[type=button] {
+input[type=button],
+.delete-button {
   padding: var(--space-1);
   background-color: var(--primary);
-  border: 1px solid var(--primary-dark);
+  border: none;
   border-radius: var(--rounded);
   cursor: pointer
 }
@@ -108,13 +109,14 @@ input[type=button] {
   flex: 1;
   padding: var(--space-1);
   background-color: var(--primary-light);
-  border: 1px solid var(--primary-dark);
+  border: none;
   border-radius: var(--rounded);
 }
 
 .product-item input:focus,
 input[type=button]:focus,
-a:focus {
+a:focus,
+.delete-button:focus {
   outline-style: solid;
   outline-color: var(--primary-dark);
   outline-width: 2px;
@@ -127,4 +129,11 @@ a:focus {
 
 .price-input {
   max-width: 200px;
+}
+
+.delete-button {
+  background-color: var(--primary-light);
+  width: 2rem;
+  height: 2rem;
+  padding: auto;
 }
