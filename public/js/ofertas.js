@@ -14,6 +14,7 @@ const buildProductField = (index) => {
   priceInput.placeholder = 'Preço'
   priceInput.name = `price-input-${index}`
   priceInput.className = 'price-input'
+  priceInput.addEventListener('keyup', (e) => priceInputFilter(e.target))
 
   const deleteButton = document.createElement('button')
   deleteButton.innerHTML = 'X'
@@ -37,6 +38,17 @@ const removeProductField = (element) => {
   list.removeChild(element.closest('.product-item'))
 
   if (list.innerHTML === '') addProductField()
+}
+
+const priceInputFilter = (element) => {
+  let allowedValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  let inputValue = element.value
+
+  if (allowedValues.indexOf(inputValue.charAt(inputValue.length - 1)) === -1) {
+    inputValue = inputValue.substring(0, inputValue.length - 1)
+  }
+
+  element.value = inputValue
 }
 
 addProductField()
