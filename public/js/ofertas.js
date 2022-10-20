@@ -7,13 +7,13 @@ const buildProductField = (index) => {
 
   const productInput = document.createElement('input')
   productInput.placeholder = 'Nome do produto'
-  productInput.name = `product-input-${index}`
+  productInput.id = `product-input-${index}`
   productInput.className = 'product-input'
   productInput.required = true
 
   const priceInput = document.createElement('input')
   priceInput.placeholder = 'Preço'
-  priceInput.name = `price-input-${index}`
+  priceInput.id = `price-input-${index}`
   priceInput.className = 'price-input'
   priceInput.addEventListener('keyup', (e) => priceInputFilter(e.target))
   priceInput.required = true
@@ -68,6 +68,25 @@ const priceInputFilter = (element) => {
   let formattedPrice = intPart + ',' + floatPart
 
   element.value = formattedPrice
+}
+
+const submitForm = (event) => {
+  event.preventDefault()
+
+  let products = []
+  let prices = []
+
+  for (let i = 1; i < productIndex; i++) {
+    let productInput = document.getElementById(`product-input-${i}`)
+    let priceInput = document.getElementById(`price-input-${i}`)
+
+    if (productInput) {
+      products.push(productInput.value)
+    }
+    if (priceInput) {
+      prices.push(priceInput.value)
+    }
+  }
 }
 
 addProductField()
