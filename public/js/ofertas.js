@@ -9,12 +9,14 @@ const buildProductField = (index) => {
   productInput.placeholder = 'Nome do produto'
   productInput.name = `product-input-${index}`
   productInput.className = 'product-input'
+  productInput.required = true
 
   const priceInput = document.createElement('input')
   priceInput.placeholder = 'Preço'
   priceInput.name = `price-input-${index}`
   priceInput.className = 'price-input'
   priceInput.addEventListener('keyup', (e) => priceInputFilter(e.target))
+  priceInput.required = true
 
   const deleteButton = document.createElement('button')
   deleteButton.innerHTML = 'X'
@@ -60,6 +62,7 @@ const priceInputFilter = (element) => {
 
   // Separar e formatar a parte fracionada do preço
   let floatPart = inputValue.substring(inputValue.length - 2, inputValue.length)
+  if (floatPart.length < 1) floatPart = '00'
   if (floatPart.length < 2) floatPart = '0' + floatPart
 
   let formattedPrice = intPart + ',' + floatPart
