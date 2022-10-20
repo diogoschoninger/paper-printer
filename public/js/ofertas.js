@@ -44,11 +44,27 @@ const priceInputFilter = (element) => {
   let allowedValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
   let inputValue = element.value
 
+  // Remover a vírgula que é adicionada pelo filtro
+  inputValue = String(inputValue.replace(',', ''))
+
+  // Remove 0 a esquerda
+  if (inputValue.charAt(0) === '0') inputValue = inputValue.substring(1);
+
   if (allowedValues.indexOf(inputValue.charAt(inputValue.length - 1)) === -1) {
     inputValue = inputValue.substring(0, inputValue.length - 1)
   }
 
-  element.value = inputValue
+  // Separar e formatar a parte inteira do preço
+  let intPart = inputValue.substring(0, inputValue.length - 2)
+  if (intPart.length < 1) intPart = '0'
+
+  // Separar e formatar a parte fracionada do preço
+  let floatPart = inputValue.substring(inputValue.length - 2, inputValue.length)
+  if (floatPart.length < 2) floatPart = '0' + floatPart
+
+  let formattedPrice = intPart + ',' + floatPart
+
+  element.value = formattedPrice
 }
 
 addProductField()
