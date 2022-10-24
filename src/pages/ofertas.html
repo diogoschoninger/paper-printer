@@ -15,7 +15,7 @@
   <header>
     <div class="container">
       <ul>
-        <a href="/src/pages/ofertas.html">
+        <a href="/src/pages/ofertas.html" class="active">
           <li>Placas de ofertas</li>
         </a>
         <a href="/src/pages/fruteira.html">
@@ -28,7 +28,23 @@
     </div>
   </header>
 
-  <h1>Escolha uma funcionalidade no menu acima.</h1>
+  <div class="container">
+    <h1 class="text-center">Placas de ofertas em papel A4</h1>
+  </div>
+
+  <form class="container" onsubmit="submitForm(event)">
+    <div class="button-group">
+      <input type="button" value="Adicionar produto" onclick="addProductField()" />
+      <input type="submit" value="Imprimir" />
+    </div>
+
+    <div class="list"></div>
+    </div>
+  </form>
+
+  <div id="printable"></div>
+
+  <script src="/public/js/ofertas.js"></script>
 </body>
 
 </html>

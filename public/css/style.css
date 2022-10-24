@@ -1,0 +1,166 @@
+:root {
+  --primary: #0d47a1;
+  --primary-light: #5472d3;
+  --primary-dark: #002171;
+  --primary-text: #fff;
+
+  --space-1: .5rem;
+  --space-2: 1rem;
+
+  --rounded: .3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary-text)
+}
+
+body {
+  background-color: var(--primary-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-bottom: var(--space-2)
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 100vw;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 var(--space-2)
+}
+
+.text-center {
+  text-align: center;
+}
+
+.active {
+  background-color: var(--primary-dark)
+}
+
+header {
+  background-color: var(--primary);
+}
+
+header ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+header ul li {
+  padding: var(--space-2);
+  border-radius: var(--rounded);
+}
+
+header ul li:hover {
+  background-color: var(--primary-dark)
+}
+
+header ul a {
+  text-decoration: none;
+  border-radius: var(--rounded);
+}
+
+header ul a:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2)
+}
+
+.button-group {
+  display: flex;
+  gap: var(--space-1)
+}
+
+input[type=button],
+input[type=submit],
+.delete-button {
+  padding: var(--space-1);
+  background-color: var(--primary);
+  border: none;
+  border-radius: var(--rounded);
+  cursor: pointer
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background-color: var(--primary);
+  border-radius: var(--rounded)
+}
+
+.product-item {
+  display: flex;
+  justify-content: stretch;
+  gap: var(--space-1);
+}
+
+.indexIndicator {
+  padding: var(--space-1);
+  text-align: center;
+  font-size: .9rem;
+  width: 2rem;
+}
+
+.product-item input {
+  flex: 1;
+  padding: var(--space-1);
+  background-color: var(--primary-light);
+  border: none;
+  border-radius: var(--rounded);
+}
+
+.product-item input:focus,
+input[type=button]:focus,
+a:focus,
+.delete-button:focus {
+  outline-style: solid;
+  outline-color: var(--primary-dark);
+  outline-width: 2px;
+  outline-offset: 0;
+}
+
+.product-item input::placeholder {
+  color: var(--secondary-text)
+}
+
+.price-input {
+  max-width: 200px;
+}
+
+.delete-button {
+  background-color: var(--primary-light);
+  width: 2rem;
+  height: 2rem;
+  padding: auto;
+}
+
+#printable {
+  visibility: hidden;
+}
+
+@media print {
+  body {
+    visibility: hidden;
+  }
+
+  #printable {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+  }
+}
