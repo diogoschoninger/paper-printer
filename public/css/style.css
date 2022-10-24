@@ -144,3 +144,19 @@ a:focus,
   height: 2rem;
   padding: auto;
 }
+
+#printable {
+  visibility: hidden;
+}
+
+@media print {
+  body {
+    visibility: hidden;
+  }
+
+  #printable {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+  }
+}
