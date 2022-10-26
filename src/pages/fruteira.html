@@ -28,7 +28,24 @@
     </div>
   </header>
 
-  <h1>Esta funcionalidade ainda não está disponível...</h1>
+  <div class="container">
+    <h1 class="text-center">Placas de preços para fruteira</h1>
+  </div>
+
+  <form class="container" onsubmit="submitForm(event)">
+    <div class="button-group">
+      <input type="button" value="Adicionar produto" onclick="addProductField()" />
+      <input type="submit" value="Imprimir" />
+    </div>
+
+    <div class="list"></div>
+    </div>
+  </form>
+
+  <div id="printable"></div>
+
+  <script src="/public/js/main.js"></script>
+  <script src="/public/js/fruteira.js"></script>
 </body>
 
 </html>
