@@ -56,6 +56,9 @@ const priceInputFilter = (element) => {
   if (allowedValues.indexOf(inputValue.charAt(inputValue.length - 1)) === -1) {
     inputValue = inputValue.substring(0, inputValue.length - 1)
   }
+  if (allowedValues.indexOf(inputValue.charAt(0)) === -1) {
+    inputValue = inputValue.substring(1, inputValue.length)
+  }
 
   // Separar e formatar a parte inteira do preço
   let intPart = inputValue.substring(0, inputValue.length - 2)
