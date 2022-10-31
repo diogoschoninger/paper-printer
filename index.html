@@ -12,23 +12,22 @@
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <ul>
-        <a href="/src/pages/ofertas.html">
-          <li>Placas de ofertas</li>
-        </a>
-        <a href="/src/pages/meia-pagina.html">
-          <li>Placas de meia página</li>
-        </a>
-        <a href="/src/pages/etiquetas-preco.html">
-          <li>Etiquetas de preço</li>
-        </a>
-      </ul>
+  <form onsubmit="notRefresh(event)">
+    <div class="button-group container">
+      <input type="button" value="Adicionar produto" onclick="addProductField()" />
+      <input type="submit" value="Imprimir em página inteira" onclick="integerPage()" />
+      <input type="submit" value="Imprimir em meia página" onclick="halfPage()" />
+      <input type="submit" value="Imprimir em etiqueta de preço" onclick="priceTag()" />
     </div>
-  </header>
 
-  <h1>Escolha uma funcionalidade no menu acima.</h1>
+    <div class="container">
+      <div class="list"></div>
+    </div>
+  </form>
+
+  <div id="printable"></div>
+
+  <script src="/public/js/main.js"></script>
 </body>
 
 </html>
