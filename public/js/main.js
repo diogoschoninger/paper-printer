@@ -82,12 +82,12 @@ const prepareArray = () => {
     let productInput = document.getElementById(`product-input-${i}`)
     let priceInput = document.getElementById(`price-input-${i}`)
 
-    if (productInput.value == "" || priceInput.value == "") return
-
     if (productInput) {
+      if (productInput.value === "") return
       products.push(productInput.value)
     }
     if (priceInput) {
+      if (priceInput.value === "") return
       prices.push(priceInput.value)
     }
   }
