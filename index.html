@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="version" content="1.3.2" />
 
-  <meta name="version" content="1.3.2" />
+    <title>Paper printer</title>
 
-  <title>Paper printer</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
 
-  <link rel="stylesheet" href="/public/css/style.css" />
-</head>
+  <body>
+    <form onsubmit="notRefresh(event)">
+      <div class="button-group container">
+        <input
+          type="button"
+          value="Adicionar produto"
+          onclick="addProductField()"
+        />
+        <input
+          type="submit"
+          value="Imprimir em página inteira"
+          onclick="integerPage()"
+        />
+        <input
+          type="submit"
+          value="Imprimir em meia página"
+          onclick="halfPage()"
+        />
+        <input
+          type="submit"
+          value="Imprimir em etiqueta de preço"
+          onclick="priceTag()"
+        />
+        <input
+          type="submit"
+          value="Imprimir em 1/4 de página"
+          onclick="quarter()"
+        />
+      </div>
 
-<body>
-  <form onsubmit="notRefresh(event)">
-    <div class="button-group container">
-      <input type="button" value="Adicionar produto" onclick="addProductField()" />
-      <input type="submit" value="Imprimir em página inteira" onclick="integerPage()" />
-      <input type="submit" value="Imprimir em meia página" onclick="halfPage()" />
-      <input type="submit" value="Imprimir em etiqueta de preço" onclick="priceTag()" />
-    </div>
+      <div class="container">
+        <div class="list"></div>
+      </div>
+    </form>
 
-    <div class="container">
-      <div class="list"></div>
-    </div>
-  </form>
+    <div id="printable" style="display: flex; flex-wrap: wrap"></div>
 
-  <div id="printable"></div>
-
-  <script src="/public/js/main.js"></script>
-</body>
-
+    <script src="/public/js/main.js"></script>
+  </body>
 </html>
