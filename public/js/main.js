@@ -107,7 +107,7 @@ const integerPage = () => {
     printable.insertAdjacentHTML(
       'beforeend',
       `
-      <div style="height: 29.7cm; width: 21cm; padding: 3rem 2rem 0 2rem">
+      <div style="height: 32.3cm; width: 23cm; padding: 3rem 2rem 0 2rem; page-break-after: always">
         <div style="text-align: center; font-weight: bold; color: rgba(0, 0, 0, .4); font-size: 7rem; height: 15%">OFERTA</div>
 
         <div style="height: 85%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
